@@ -1,0 +1,53 @@
+name: ScheduledAnnouncer2
+main: com.mjoell.ScheduledAnnouncer.AnnouncerPlugin
+version: 2.8.6 - For version 1.9.4
+description: Automatically Announce tips and news!
+authors:
+ - 'MJoell'
+
+commands:
+  announce:
+    description: Managing Announcements
+    usage: /<command> help - Displays the help for Announcer
+    permission: announcer.command
+  announcer:
+    description: Alias for /announce
+    usage: /<command> help - Displays the help for Announcer
+    permission: announcer.command
+  an:
+    description: Alias for /announce
+    usage: /<command> help
+    permission: announcer.command
+
+permissions:
+    announcer.*:
+        description: Gives access to all commands for managing announcements
+        children:
+            announcer.command: true
+            announcer.receiver: true
+            announcer.add: true
+            announcer.delete: true
+            announcer.broadcast: true
+            announcer.moderate: true
+            announcer.admin: true
+    announcer.command:
+        description: Allows you to issue command
+        default: true
+    announcer.receiver:
+        description: Allows you to receive notifications
+        default: true
+    announcer.add:
+        description: Allows you to add a notification
+        default: op
+    announcer.delete:
+        description: Allows you to delete notifications
+        default: op
+    announcer.broadcast:
+        description: Allows you to just broadcast notfications
+        default: op
+    announcer.moderate:
+        description: Allows you to change properties the plugin.
+        default: op
+    announce.admin:
+        description: Allows you to load, save and restart the plugin.
+        default: op
